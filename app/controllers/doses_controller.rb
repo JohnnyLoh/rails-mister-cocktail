@@ -9,11 +9,11 @@ class DosesController < ApplicationController
   end
 
   def create        # POST /cocktails
-    @dose = Dose.new(dose_params)
     @cocktail = Cocktail.find(params[:cocktail_id])
+    @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to cocktail_doses_path
+      redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
@@ -21,13 +21,18 @@ class DosesController < ApplicationController
 
    def destroy
     @dose = Dose.find(params[:id])
+    @cocktail = @dose.cocktail
     @dose.destroy
-    redirect_to dose_path
+    redirect_to cocktail_path(@cocktail)
   end
+
+  #other way: define destroy nested (in routes.rb)
+  #link_to needs two parameters: cocktail_dose_path(@cocktail, @dose), (in show.html.erb)
 
   private
 
   def dose_params
-    params.require(:dose).permit(:description, :cocktail_id, :incredient_id)
+    params.require(:dose).permit(:description, :ingredient_id)
   end
 end
+

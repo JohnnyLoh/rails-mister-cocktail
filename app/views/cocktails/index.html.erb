@@ -4,14 +4,22 @@
   <table style="width:100%">
   <tr>
     <th>Name</th>
+    <th></th>
   </tr>
   <% @cocktails.each do |cocktail| %>
   <tr>
-    <td><%= link_to cocktail.name, cocktail_path(cocktail) %></td>
+    <td>
+      <ul>
+        <li>
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </li>
+      </ul>
+    </td>
+    <td> <%= link_to "Destroy", cocktail_path(cocktail), method: :delete %></td>
   </tr>
   <% end %>
 </table>
 </br>
 <p style="text-align: center">
-<%= link_to "+ Add a new article", new_cocktail_path %>
+<%= link_to "+ Add a new cocktail", new_cocktail_path %>
 </p>
