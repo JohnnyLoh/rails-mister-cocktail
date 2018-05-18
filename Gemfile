@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 # Faker
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+# Security picture
+gem 'figaro'
+
+
 # Bootstrap
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
