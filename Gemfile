@@ -29,19 +29,27 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# CarrierWave - helps uploading pictures
+gem 'carrierwave', '~> 1.0'
+
 # Faker
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # Security picture
 gem 'figaro'
 
+# Cloudinary Pictures
+gem 'cloudinary'
 
 # Bootstrap
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

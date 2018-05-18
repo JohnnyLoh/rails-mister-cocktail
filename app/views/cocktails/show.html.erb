@@ -1,9 +1,11 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <div class="banner-content">
+    <h2><%= @cocktail.name %></h2>
+    <%= link_to "New Dose", new_cocktail_dose_path(@cocktail), class:"btn btn-primary" %>
+  </div>
+</div>
 
-<h2><%= @cocktail.name %></h2>
-</br>
-<p><%= link_to "New Dose", new_cocktail_dose_path(@cocktail) %></p>
-</br>
-
+<% @cocktail.doses.each do |dose| %>
 <table>
   <table style="width:100%">
   <tr>
@@ -11,14 +13,15 @@
     <th>Ingredient</th>
     <th></th>
   </tr>
-  <% @cocktail.doses.each do |dose| %>
   <tr>
     <td><%=  dose.description %></td>
     <td><%=  dose.ingredient.name %></td>
     <td><%= link_to "Delete", dose_path(dose), method: :delete %></td>
   </tr>
-  <% end %>
 </table>
-
 </br>
-<p><%= link_to "Return", root_path %></p>
+ <% end %>
+
+ <p><%= link_to "Return", root_path %></p>
+
+<!-- Row 5 make button to link_to -->

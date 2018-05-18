@@ -9,6 +9,3 @@ Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
 
-Cocktail.create(name: "Cola")
-Cocktail.create(name: "Fanta")
-Cocktail.create(name: "Bier")
