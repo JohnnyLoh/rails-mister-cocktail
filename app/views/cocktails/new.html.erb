@@ -1,0 +1,7 @@
+<h2>Cocktails new</h2>
+
+
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, label: 'Cocktail\'s name please', error: 'cocktail name is mandatory, please specify one'%>
+  <%= f.button :submit %>
+<% end %>

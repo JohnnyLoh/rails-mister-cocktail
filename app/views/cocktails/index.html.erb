@@ -1,0 +1,17 @@
+<h2>Cocktails index</h2>
+
+<table>
+  <table style="width:100%">
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @cocktails.each do |cocktail| %>
+  <tr>
+    <td><%= link_to cocktail.name, cocktail_path(cocktail) %></td>
+  </tr>
+  <% end %>
+</table>
+</br>
+<p style="text-align: center">
+<%= link_to "+ Add a new article", new_cocktail_path %>
+</p>

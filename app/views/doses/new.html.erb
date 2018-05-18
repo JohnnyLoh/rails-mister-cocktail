@@ -1,0 +1,7 @@
+<h2>Doses new</h2>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description, :collection => [['0.5', :small], ['0.25', :big]], as: :select %>
+  <%= f.button :submit %>
+<% end %>
+
+
